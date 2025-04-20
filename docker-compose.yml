@@ -1,19 +1,15 @@
-version: '3'
 services:
   mongo:
     build: 
       context: './mongo'
+      dockerfile: 'Dockerfile'
       args:
-        - 'MONGO_INITDB_USERNAME=${DB_USER}'
-        - 'MONGO_INITDB_PASSWORD=${DB_PASSWORD}'
-        - 'MONGO_INITDB_DATABASE=${DB_NAME}'
+        MONGODB_VERSION: ${MONGODB_VERSION}
+        MONGO_INITDB_DATABASE: ${DB_NAME}
     environment:
-      - 'MONGO_INITDB_ROOT_USERNAME=${DB_ROOT_USERNAME}'
-      - 'MONGO_INITDB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}'
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - '${DATA_PATH_HOST}:/data/db'
     ports:
       - '${MONGODB_PORT}:27017'
-    command: [--auth]
-    volumes:
-      - '${DATA_PATH_HOST}/mongo:/data/db'
-      - '${DATA_PATH_HOST}/mongo_config:/data/configdb'
-volumes: {}

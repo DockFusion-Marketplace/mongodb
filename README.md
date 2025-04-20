@@ -1,19 +1,10 @@
-## MongoDB
-MongoDB(R) is a relational open source NoSQL database. Easy to use, it stores data in JSON-like documents. Automated scalability and high-performance. Ideal for developing cloud native applications.
+# MongoDB in Docker
+This template sets up a containerized MongoDB server for use in local development environments managed by Dock Fusion. MongoDB is a flexible, document-based NoSQL database that's ideal for modern app development.
 
-## Install
-### Using DECK
-Install MongoDB from the DECK marketplace and follow the instructions on the GUI
-### From terminal with Docker
-```console
-$ git clone https://github.com/deck-app/mongodb.git
-$ cd mongodb
-$ docker-compose up -d
-```
-### Modifying project settings
-From the DECK app, go to stack list and click on project's `More > configure > Advanced configuration` Follow the instructions below and restart your stack from the GUI
-### Rebuilding from terminal
-You have to rebuild the docker image after you make any changes to the project configuration, use the snippet below to rebuild and restart the stack
-```
-docker-compose stop && docker-compose up --build -d
-```
+## 🚀 What's Included
+
+- MongoDB (6.0+) — NoSQL document-oriented database
+
+## 📦 Requirements
+- [Docker](https://www.docker.com)
+- [Dock Fusion](https://github.com/DockFusion/dock-fusion-app/releases)

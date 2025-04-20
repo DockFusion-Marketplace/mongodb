@@ -1,4 +1,19 @@
-  
+#User defined
+user:
+  mongodb_version:
+    label:
+      MongoDB version
+    hint:
+      Select MongoDB version
+    type:
+      select
+    values:
+      - "8.0"
+      - "7.0"
+      - "6.0"
+    target:
+      MONGODB_VERSION
+
 #System defaults
 system:
   #For collecting and storing DB in .env
